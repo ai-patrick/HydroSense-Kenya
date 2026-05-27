@@ -1,0 +1,4 @@
+zone_id,crop_type,area_m2,min_moisture_pct,target_moisture_pct,field_capacity_pct,drainage_coefficient
+Zone_A,tomato,120,22,33,41,0.18
+Zone_B,kale,90,24,35,43,0.15
+Zone_C,maize,180,20,31,40,0.22
