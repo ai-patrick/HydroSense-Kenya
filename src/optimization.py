@@ -21,7 +21,7 @@ from typing import Optional
 
 import numpy as np
 
-from .simulation import (
+from simulation import (
     compute_et,
     simulate_water_balance,
     SimulationResult,
