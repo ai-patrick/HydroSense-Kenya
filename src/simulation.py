@@ -44,8 +44,8 @@ def compute_et(
     All inputs must be array-like with matching shapes. Uses np.maximum
     for element-wise clamping — numerically safe, no branching overhead.
     """
-    et_raw = (
-        0.12 * np.asarray(temperature, dtype=np.float64)
+    et_raw = (        
+        0.12 * np.asarray(temperature, dtype=np.float64)                                                        #asarray means to convert the input to a numpy array if it isn't already one, and dtype=np.float64 ensures that the computations are done in double precision for accuracy.
         + 0.35 * np.asarray(wind_speed, dtype=np.float64)
         + 2.4 * np.asarray(solar_index, dtype=np.float64)
         - 0.025 * np.asarray(humidity, dtype=np.float64)
@@ -53,7 +53,7 @@ def compute_et(
     return np.maximum(0.0, et_raw)
 
 
-def compute_et_scalar(
+def compute_et_scalar(                                                                           #this is a scalar version of the compute_et function, which computes evapotranspiration (ET) based on the same empirical model but for single scalar inputs instead of arrays. This function is useful for evaluating ET in contexts where only single values are needed, such as in the right-hand side of the water balance ODE.
     temperature: float, wind_speed: float,
     solar_index: float, humidity: float,
 ) -> float:
